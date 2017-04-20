@@ -92,7 +92,7 @@ abline(0,1)
 y = apply(X,1,vdotf)
 X1 = as.data.frame(X)
 b=loess(y~p1+p2,data=X1,degree=2,span=.5)
-y.loess=predict(b,test) ##why is this not working properly but it does in class code
+y.loess=predict(b,test) ##singularity issues.
 sqrt(mean((y.loess-y.test)^2))
 plot(y.loess,y.test)
 abline(0,1)
